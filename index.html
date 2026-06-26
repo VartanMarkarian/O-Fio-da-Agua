@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Experience</title>
-
-    <style>
-        body{
-            margin:0;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            background:#111;
-            color:black;
-            font-family:Arial,sans-serif;
-            text-align:center;
-        }
-
-        button{
-            padding:18px 40px;
-            font-size:22px;
-            border:none;
-            border-radius:12px;
-            cursor:pointer;
-            background:#ffffff;
-        }
-
-        button:hover{
-            opacity:.9;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Fio da Água</title>
+<style>
+body{margin:0;background:#f5f5f2;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.7}
+.hero{max-width:850px;margin:auto;padding:60px 24px}
+.kicker{letter-spacing:.15em;text-transform:uppercase;color:#666;font-size:.8rem}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:.3rem 0}
+h2{font-weight:400;color:#666;font-size:1.2rem;margin:0 0 2rem}
+p{font-size:1.08rem}
+.button{display:inline-block;margin-top:32px;background:#111;color:#fff;padding:18px 34px;border-radius:999px;text-decoration:none;font-weight:600}
+.button:hover{background:#333}
+hr{margin:50px 0;border:none;border-top:1px solid #ddd}
+.credits{color:#555;font-size:.95rem}
+</style>
 </head>
 <body>
+<div class="hero">
+<div class="kicker">Interactive AR Installation</div>
+<h1>O Fio da Água:<br>Rituais para a Resiliência Hídrica</h1>
+<h2>O Fio da Água: Rituals for Watery Resilience</h2>
 
-<a id="arLink" rel="ar" href="model.usdz">
-    <button>Open in AR</button>
-</a>
+<p>Uma intervenção performativa inspirada nas ligações da água em Esposende, desde memórias de cheias até às formas contemporâneas de relação, adaptação e transformação dos ecossistemas hídricos em tempos de incerteza.</p>
+
+<p>Este ritual contemporâneo propõe um espaço de imaginação e coexistência com a água, ativando o antigo farol da Bonança (Ofir) durante a lua cheia como elemento simbólico de luz, orientação e memória.</p>
+
+<p>Um momento de encontro entre corpo, território e água, onde se cruzam memória, presença e futuro.</p>
+
+<p>A performative intervention inspired by the watery connections in Esposende, from flood memories to contemporary forms of relation, adaptation, and transformation of water ecosystems in times of uncertainty.</p>
+
+<p>This contemporary ritual creates a space for imagining watery coexistence, activating the old Bonança lighthouse (Ofir) under the full moon as a symbolic element of light, guidance, and memory.</p>
+
+<p>A moment of encounter between body, territory, and water, where memory, presence, and future intersect.</p>
+
+<a id="actionButton" class="button" href="#">Loading…</a>
+
+<hr>
+
+<div class="credits">
+<p><strong>Participants</strong><br>Seila Fernandez Arconada</p>
+<p><strong>Promoted by</strong><br>S+T+ARTS AQUA MOTION</p>
+<p><strong>3D / AR</strong><br>Vartan Markarian</p>
+</div>
+</div>
 
 <script>
-const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
-    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-if (!isiOS) {
-    window.location.href = "https://playcanv.as/b/af5d501b";
+const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+const btn=document.getElementById("actionButton");
+if(isiOS){
+ btn.textContent=" View in Augmented Reality";
+ btn.href="model.usdz?v=1";
+ btn.setAttribute("rel","ar");
+}else{
+ btn.textContent="Open Interactive Experience";
+ btn.href="https://playcanv.as/b/af5d501b";
 }
 </script>
-
 </body>
 </html>
