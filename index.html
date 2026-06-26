@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Experience</title>
+
+    <style>
+        body{
+            margin:0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#111;
+            color:white;
+            font-family:Arial,sans-serif;
+            text-align:center;
+        }
+
+        button{
+            padding:18px 40px;
+            font-size:22px;
+            border:none;
+            border-radius:12px;
+            cursor:pointer;
+            background:#ffffff;
+        }
+
+        button:hover{
+            opacity:.9;
+        }
+    </style>
+</head>
+<body>
+
+<a id="arLink" rel="ar" href="model.usdz">
+    <button>Open in AR</button>
+</a>
+
+<script>
+const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+if (!isiOS) {
+    window.location.href = "https://playcanv.as/p/KFTKQtcT/";
+}
+</script>
+
+</body>
+</html>
