@@ -1,62 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>O Fio da Água</title>
+
 <style>
-body{margin:0;background:#f5f5f2;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.7}
-.hero{max-width:850px;margin:auto;padding:60px 24px}
-.kicker{letter-spacing:.15em;text-transform:uppercase;color:#666;font-size:.8rem}
-h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:.3rem 0}
-h2{font-weight:400;color:#666;font-size:1.2rem;margin:0 0 2rem}
-p{font-size:1.08rem}
-.button{display:inline-block;margin-top:32px;background:#111;color:#fff;padding:18px 34px;border-radius:999px;text-decoration:none;font-weight:600}
-.button:hover{background:#333}
-hr{margin:50px 0;border:none;border-top:1px solid #ddd}
-.credits{color:#555;font-size:.95rem}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+color:#15263d;
+
+line-height:1.75;
+
+background:
+linear-gradient(rgba(255,255,255,.42),
+rgba(255,255,255,.42)),
+url("background.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+min-height:100vh;
+
+}
+
+.hero{
+
+max-width:930px;
+
+margin:auto;
+
+padding:70px 28px 80px;
+
+}
+
+.kicker{
+
+font-size:.82rem;
+
+letter-spacing:.28em;
+
+text-transform:uppercase;
+
+color:#35506d;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+h1{
+
+font-family:Georgia,"Times New Roman",serif;
+
+font-size:clamp(2.8rem,6vw,5.2rem);
+
+font-weight:400;
+
+line-height:1.05;
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+font-weight:400;
+
+color:#4e617b;
+
+margin-bottom:42px;
+
+font-size:1.3rem;
+
+}
+
+p{
+
+font-size:1.08rem;
+
+max-width:760px;
+
+margin-bottom:22px;
+
+}
+
+hr{
+
+margin:55px 0;
+
+border:none;
+
+border-top:1px solid rgba(20,40,70,.18);
+
+}
+
+.button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px 40px;
+
+margin-top:25px;
+
+background:#0d2748;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:60px;
+
+font-weight:600;
+
+font-size:1.12rem;
+
+transition:.35s;
+
+box-shadow:0 12px 35px rgba(0,0,0,.18);
+
+}
+
+.button:hover{
+
+transform:translateY(-3px);
+
+background:#173b66;
+
+}
+
+.desktopMessage{
+
+display:none;
+
+margin-top:35px;
+
+padding:35px;
+
+text-align:center;
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(18px);
+
+border-radius:24px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.desktopQR{
+
+width:240px;
+
+max-width:85%;
+
+display:block;
+
+margin:0 auto 28px;
+
+background:white;
+
+padding:14px;
+
+border-radius:18px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.desktopMessage h3{
+
+font-size:1.7rem;
+
+margin-bottom:15px;
+
+font-weight:500;
+
+}
+
+.desktopMessage p{
+
+max-width:560px;
+
+margin:auto;
+
+color:#56687f;
+
+}
+
+.credits{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+margin-top:65px;
+
+padding-top:35px;
+
+border-top:1px solid rgba(20,40,70,.15);
+
+}
+
+.credits strong{
+
+display:block;
+
+font-size:.82rem;
+
+text-transform:uppercase;
+
+letter-spacing:.15em;
+
+margin-bottom:10px;
+
+color:#45607d;
+
+}
+
+.footer{
+
+margin-top:65px;
+
+text-align:center;
+
+color:#5d6e82;
+
+font-size:.95rem;
+
+}
+
+@media(max-width:800px){
+
+.hero{
+
+padding:45px 22px;
+
+}
+
+.credits{
+
+grid-template-columns:1fr;
+
+gap:28px;
+
+}
+
+.button{
+
+width:100%;
+
+}
+
+.desktopQR{
+
+width:180px;
+
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
+
 <div class="hero">
-<div class="kicker">Interactive AR Installation</div>
-<h1>O Fio da Água:<br>Rituais para a Resiliência Hídrica</h1>
-<h2>O Fio da Água: Rituals for Watery Resilience</h2>
 
-<p>Uma intervenção performativa inspirada nas ligações da água em Esposende, desde memórias de cheias até às formas contemporâneas de relação, adaptação e transformação dos ecossistemas hídricos em tempos de incerteza.</p>
+<div class="kicker">
+INTERACTIVE AR INSTALLATION
+</div>
 
-<p>Este ritual contemporâneo propõe um espaço de imaginação e coexistência com a água, ativando o antigo farol da Bonança (Ofir) durante a lua cheia como elemento simbólico de luz, orientação e memória.</p>
+<h1>
+O Fio da Água:<br>
+Rituais para a<br>
+Resiliência Hídrica
+</h1>
 
-<p>Um momento de encontro entre corpo, território e água, onde se cruzam memória, presença e futuro.</p>
+<h2>
+O Fio da Água: Rituals for Watery Resilience
+</h2>
 
-<p>A performative intervention inspired by the watery connections in Esposende, from flood memories to contemporary forms of relation, adaptation, and transformation of water ecosystems in times of uncertainty.</p>
+<p>
+Uma intervenção performativa inspirada nas ligações da água em Esposende,
+desde memórias de cheias até às formas contemporâneas de relação,
+adaptação e transformação dos ecossistemas hídricos em tempos de incerteza.
+</p>
 
-<p>This contemporary ritual creates a space for imagining watery coexistence, activating the old Bonança lighthouse (Ofir) under the full moon as a symbolic element of light, guidance, and memory.</p>
+<p>
+Este ritual contemporâneo propõe um espaço de imaginação e coexistência
+com a água, ativando o antigo farol da Bonança (Ofir) durante a lua cheia
+como elemento simbólico de luz, orientação e memória.
+</p>
 
-<p>A moment of encounter between body, territory, and water, where memory, presence, and future intersect.</p>
-
-<a id="actionButton" class="button" href="#">Loading…</a>
+<p>
+Um momento de encontro entre corpo, território e água,
+onde se cruzam memória, presença e futuro.
+</p>
 
 <hr>
 
-<div class="credits">
-<p><strong>Participants</strong><br>Seila Fernandez Arconada</p>
-<p><strong>Promoted by</strong><br>S+T+ARTS AQUA MOTION</p>
-<p><strong>3D / AR</strong><br>Vartan Markarian</p>
+<p>
+<i>
+A performative intervention inspired by the watery connections in Esposende,
+from flood memories to contemporary forms of relation,
+adaptation and transformation of water ecosystems
+in times of uncertainty.
+</i>
+</p>
+
+<p>
+<i>
+This contemporary ritual creates a space for imagining watery coexistence,
+activating the old Bonança lighthouse (Ofir)
+under the full moon as a symbolic element of light,
+guidance and memory.
+</i>
+</p>
+
+<p>
+<i>
+A moment of encounter between body,
+territory and water,
+where memory,
+presence and future intersect.
+</i>
+</p>
+
+
+<!-- КНОПКА ДЛЯ МОБІЛЬНИХ -->
+
+<a
+id="actionButton"
+class="button"
+href="#">
+
+Loading...
+
+</a>
+
+
+<!-- БЛОК ДЛЯ ДЕСКТОПУ -->
+
+<div
+id="desktopMessage"
+class="desktopMessage">
+
+<img
+src="qrcode.png"
+class="desktopQR"
+alt="QR Code">
+
+<h3>
+
+Scan to experience the artwork
+
+</h3>
+
+<p>
+
+This artwork is available on
+<strong>iPhone</strong>
+and
+<strong>Android</strong>.
+
+<br><br>
+
+Use your phone camera to scan the QR code
+and launch the Augmented Reality experience.
+
+</p>
+
 </div>
+
+
+<div class="credits">
+
+<div>
+
+<strong>
+Participants
+</strong>
+
+Seila Fernandez Arconada
+
+</div>
+
+<div>
+
+<strong>
+Promoted by
+</strong>
+
+S+T+ARTS AQUA MOTION
+
+</div>
+
+<div>
+
+<strong>
+3D / AR
+</strong>
+
+Vartan Markarian
+
+</div>
+
+</div>
+
+
+<div class="footer">
+
+S+T+ARTS AQUA MOTION
+
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+Water connects. Art transforms.
+
+</div>
+
 </div>
 
 <script>
-const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
-const btn=document.getElementById("actionButton");
-if(isiOS){
- btn.textContent=" View in Augmented Reality";
- btn.href="model.usdz?v=1";
- btn.setAttribute("rel","ar");
-}else{
- btn.textContent="Open Interactive Experience";
- btn.href="https://playcanv.as/b/af5d501b";
+
+//=====================================================
+// НАЛАШТУВАННЯ
+//=====================================================
+
+// Посилання на PlayCanvas
+const PLAYCANVAS_URL =
+"https://playcanv.as/b/af5d501b";
+
+// Назва USDZ
+const IOS_MODEL =
+"model.usdz";
+
+//=====================================================
+// ВИЗНАЧЕННЯ ПРИСТРОЮ
+//=====================================================
+
+const ua = navigator.userAgent;
+
+const isIOS =
+/iPad|iPhone|iPod/.test(ua) ||
+(navigator.platform === "MacIntel" &&
+navigator.maxTouchPoints > 1);
+
+const isAndroid =
+/Android/i.test(ua);
+
+//=====================================================
+// ЕЛЕМЕНТИ
+//=====================================================
+
+const button =
+document.getElementById("actionButton");
+
+const desktop =
+document.getElementById("desktopMessage");
+
+//=====================================================
+// ПОЧАТКОВА АНІМАЦІЯ
+//=====================================================
+
+button.style.opacity = "0";
+button.style.transform = "translateY(20px)";
+
+desktop.style.opacity = "0";
+desktop.style.transform = "translateY(20px)";
+
+//=====================================================
+// iPHONE / iPAD
+//=====================================================
+
+if(isIOS){
+
+button.innerHTML =
+" View in Augmented Reality";
+
+button.href =
+IOS_MODEL;
+
+button.setAttribute(
+"rel",
+"ar"
+);
+
+setTimeout(()=>{
+
+button.style.transition=".7s";
+button.style.opacity="1";
+button.style.transform="translateY(0)";
+
+},250);
+
 }
+
+//=====================================================
+// ANDROID
+//=====================================================
+
+else if(isAndroid){
+
+button.innerHTML =
+"Open Interactive Experience";
+
+button.href =
+PLAYCANVAS_URL;
+
+setTimeout(()=>{
+
+button.style.transition=".7s";
+button.style.opacity="1";
+button.style.transform="translateY(0)";
+
+},250);
+
+}
+
+//=====================================================
+// DESKTOP
+//=====================================================
+
+else{
+
+button.style.display="none";
+
+desktop.style.display="block";
+
+setTimeout(()=>{
+
+desktop.style.transition=".7s";
+desktop.style.opacity="1";
+desktop.style.transform="translateY(0)";
+
+},250);
+
+}
+
 </script>
+
 </body>
+
 </html>
