@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>O Fio da Água</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+color:#15263d;
+
+line-height:1.75;
+
+background:
+linear-gradient(rgba(255,255,255,.42),
+rgba(255,255,255,.42)),
+url("background.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+min-height:100vh;
+
+}
+
+.hero{
+
+max-width:930px;
+
+margin:auto;
+
+padding:70px 28px 80px;
+
+}
+
+.kicker{
+
+font-size:.82rem;
+
+letter-spacing:.28em;
+
+text-transform:uppercase;
+
+color:#35506d;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+h1{
+
+font-family:Georgia,"Times New Roman",serif;
+
+font-size:clamp(2.8rem,6vw,5.2rem);
+
+font-weight:400;
+
+line-height:1.05;
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+font-weight:400;
+
+color:#4e617b;
+
+margin-bottom:42px;
+
+font-size:1.3rem;
+
+}
+
+p{
+
+font-size:1.08rem;
+
+max-width:760px;
+
+margin-bottom:22px;
+
+}
+
+hr{
+
+margin:55px 0;
+
+border:none;
+
+border-top:1px solid rgba(20,40,70,.18);
+
+}
+
+.button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px 40px;
+
+margin-top:25px;
+
+background:#0d2748;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:60px;
+
+font-weight:600;
+
+font-size:1.12rem;
+
+transition:.35s;
+
+box-shadow:0 12px 35px rgba(0,0,0,.18);
+
+}
+
+.button:hover{
+
+transform:translateY(-3px);
+
+background:#173b66;
+
+}
+
+.desktopMessage{
+
+display:none;
+
+margin-top:35px;
+
+padding:35px;
+
+text-align:center;
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(18px);
+
+border-radius:24px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.desktopQR{
+
+width:240px;
+
+max-width:85%;
+
+display:block;
+
+margin:0 auto 28px;
+
+background:white;
+
+padding:14px;
+
+border-radius:18px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.desktopMessage h3{
+
+font-size:1.7rem;
+
+margin-bottom:15px;
+
+font-weight:500;
+
+}
+
+.desktopMessage p{
+
+max-width:560px;
+
+margin:auto;
+
+color:#56687f;
+
+}
+
+.artwork-image{
+
+width:100%;
+
+max-width:560px;
+
+display:block;
+
+margin:40px 0;
+
+border-radius:18px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+.credits{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+margin-top:65px;
+
+padding-top:35px;
+
+border-top:1px solid rgba(20,40,70,.15);
+
+}
+
+.credits strong{
+
+display:block;
+
+font-size:.82rem;
+
+text-transform:uppercase;
+
+letter-spacing:.15em;
+
+margin-bottom:10px;
+
+color:#45607d;
+
+}
+
+.more-info{
+
+margin-top:40px;
+
+padding-top:30px;
+
+border-top:1px solid rgba(20,40,70,.12);
+
+font-size:.98rem;
+
+color:#4e617b;
+
+}
+
+.more-info a{
+
+color:#0d2748;
+
+font-weight:600;
+
+text-decoration:none;
+
+border-bottom:2px solid rgba(13,39,72,.3);
+
+transition:.25s;
+
+}
+
+.more-info a:hover{
+
+border-bottom-color:#0d2748;
+
+}
+
+.footer{
+
+margin-top:65px;
+
+text-align:center;
+
+color:#5d6e82;
+
+font-size:.95rem;
+
+}
+
+@media(max-width:800px){
+
+.hero{
+
+padding:45px 22px;
+
+}
+
+.credits{
+
+grid-template-columns:1fr;
+
+gap:28px;
+
+}
+
+.button{
+
+width:100%;
+
+}
+
+.desktopQR{
+
+width:180px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<div class="kicker">
+INTERVENÇÃO PERFORMATIVA
+</div>
+
+<h1>
+O Fio da Água:<br>
+Rituais para a<br>
+Resiliência Hídrica
+</h1>
+
+<img
+src="image1.png"
+class="artwork-image"
+alt="O Fio da Água — Intervenção Performativa">
+
+<p style="margin-top:55px;">
+
+<p>
+Intervenção performativa inspirada nas ligações da água em Esposende,
+desde memórias de cheias até às formas contemporâneas de relação,
+adaptação e transformação dos ecossistemas hídricos em tempos de incerteza.
+</p>
+
+<p>
+Este ritual contemporâneo propõe um espaço de imaginação e coexistência
+com a água, ativando o antigo farol da Bonança (Ofir) durante a lua cheia
+como elemento simbólico de luz, orientação e memória.
+</p>
+
+<p>
+Um momento de encontro entre corpo, território e água,
+onde se cruzam memória, presença e futuro.
+</p>
+
+<div class="credits">
+
+<div>
+
+<strong>
+Artista e investigadora multidisciplinar
+</strong>
+
+Seila Fernández Arconada
+
+</div>
+
+<div>
+
+<strong>
+3D / AR (Realidade Aumentada)
+</strong>
+
+Vartan Markarian
+
+</div>
+
+</div>
+
+<hr>
+
+<p>
+Esta intervenção faz parte do projeto <em>"O Fio da Água: Abraçar o Fluxo da Água
+para Futuros Resilientes"</em>, parte integrante do Festival Águas Vivas,
+organizado pela Rio Neiva - Associação Defesa do Ambiente. Promovido por
+S+T+ARTS AQUA MOTION em colaboração com a Junta de Freguesia de Fão,
+Município de Esposende, Arquivo Municipal e o Parque Natural do Litoral Norte.
+</p>
+
+<!-- КНОПКА ДЛЯ МОБІЛЬНИХ -->
+
+<a
+id="actionButton"
+class="button"
+href="#">
+
+Loading...
+
+</a>
+
+
+<!-- БЛОК ДЛЯ ДЕСКТОПУ -->
+
+<div
+id="desktopMessage"
+class="desktopMessage">
+
+<img
+src="qrcode.png"
+class="desktopQR"
+alt="QR Code">
+
+<h3>
+
+Digitalize para experienciar a Intervenção
+
+</h3>
+
+<p>
+
+Esta experiência de Realidade Aumentada está disponível para
+<strong>iPhone</strong>
+e
+<strong>Android</strong>.
+
+<br><br>
+
+Use a câmara do seu telemóvel para digitalizar o código QR
+e iniciar a experiência de Realidade Aumentada.
+
+</p>
+
+</div>
+
+<p style="margin-top:55px;">
+
+<p>
+
+<em>"O Fio da Água: Abraçar o Fluxo da Água para Futuros Resilientes"</em> explora
+as relações aquosas entre a comunidade local e o território, procurando transformar
+percepções das populações propensas a cheias sobre as incertezas da água numa
+coexistência imaginativa. Através de ações artísticas multissensoriais e
+"conversas sobre cheias", esta iniciativa de investigação e colaboração
+transdisciplinar visa revelar fluxos hídricos ocultos e inspirar novas atitudes
+coletivas para um futuro mais harmonioso e resiliente.
+</p>
+
+<p>
+Liderado por Seila Fernández Arconada, artista e investigadora multidisciplinar
+espanhola radicada em Berlim especializada em crises socioecológicas, o projeto
+foi selecionado pelo programa europeu S+T+ARTS AQUA MOTION (Desafio #8 –
+<em>Moving Waters</em>). Esta iniciativa conta com o apoio da Comissão Europeia
+e está a ser desenvolvida em parceria com a Rio Neiva Associação.
+</p>
+
+<div class="more-info">
+
+Mais informações:
+<a
+href="https://linktr.ee/ofiodaagua"
+target="_blank"
+rel="noopener noreferrer">
+linktr.ee/ofiodaagua
+</a>
+
+</div>
+
+<div class="footer">
+
+<em>Promovido por S+T+ARTS AQUA MOTION</em>
+
+</div>
+
+</div>
+
+<script>
+
+//=====================================================
+// НАЛАШТУВАННЯ
+//=====================================================
+
+// Посилання на PlayCanvas
+const PLAYCANVAS_URL =
+"https://playcanv.as/b/af5d501b";
+
+// Назва USDZ
+const IOS_MODEL =
+"model.usdz";
+
+//=====================================================
+// ВИЗНАЧЕННЯ ПРИСТРОЮ
+//=====================================================
+
+const ua = navigator.userAgent;
+
+const isIOS =
+/iPad|iPhone|iPod/.test(ua) ||
+(navigator.platform === "MacIntel" &&
+navigator.maxTouchPoints > 1);
+
+const isAndroid =
+/Android/i.test(ua);
+
+//=====================================================
+// ЕЛЕМЕНТИ
+//=====================================================
+
+const button =
+document.getElementById("actionButton");
+
+const desktop =
+document.getElementById("desktopMessage");
+
+//=====================================================
+// ПОЧАТКОВА АНІМАЦІЯ
+//=====================================================
+
+button.style.opacity = "0";
+button.style.transform = "translateY(20px)";
+
+desktop.style.opacity = "0";
+desktop.style.transform = "translateY(20px)";
+
+//=====================================================
+// iPHONE / iPAD
+//=====================================================
+
+if(isIOS){
+
+button.innerHTML =
+"&#128247; Ver em Realidade Aumentada";
+
+button.href =
+IOS_MODEL;
+
+button.setAttribute(
+"rel",
+"ar"
+);
+
+setTimeout(()=>{
+
+button.style.transition=".7s";
+button.style.opacity="1";
+button.style.transform="translateY(0)";
+
+},250);
+
+}
+
+//=====================================================
+// ANDROID
+//=====================================================
+
+else if(isAndroid){
+
+button.innerHTML =
+"Abrir Experiência Interativa";
+
+button.href =
+PLAYCANVAS_URL;
+
+setTimeout(()=>{
+
+button.style.transition=".7s";
+button.style.opacity="1";
+button.style.transform="translateY(0)";
+
+},250);
+
+}
+
+//=====================================================
+// DESKTOP
+//=====================================================
+
+else{
+
+button.style.display="none";
+
+desktop.style.display="block";
+
+setTimeout(()=>{
+
+desktop.style.transition=".7s";
+desktop.style.opacity="1";
+desktop.style.transform="translateY(0)";
+
+},250);
+
+}
+
+</script>
+
+</body>
+
+</html>
